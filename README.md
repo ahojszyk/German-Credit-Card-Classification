@@ -12,7 +12,7 @@ To get started with this project, you need to install the required Python librar
 
 ```bash
 pip install -r requirements.txt
-
+```
 
 ## Dataset Overview
 
