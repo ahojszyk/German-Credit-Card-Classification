@@ -6,6 +6,14 @@ For financial institutions, credit risk assessment is a crucial task that enable
 
 The aim of this project is twofold. Firstly, it involves describing and performing exploratory data analysis on the 'German Credit Data' dataset to maximize insight into the dataset and its structure. Secondly, using the knowledge gained from this analysis, different data mining techniques will be employed to classify bank customers as 'good' or 'bad.' These classification models will be compared to select the best one, with the goal of increasing the efficiency of predicting whether a given customer is suitable for credit.
 
+## Setup
+
+To get started with this project, you need to install the required Python libraries. All the necessary libraries are listed in the `requirements.txt` file. You can install them using pip:
+
+```bash
+pip install -r requirements.txt
+
+
 ## Dataset Overview
 
 The dataset contains 1,000 records, each described by 20 features and one response variable. The features include personal, demographic, and financial factors of potential loan applicants. The response variable indicates the risk score: `1` for a good risk score and `2` for a bad risk score.
@@ -114,6 +122,8 @@ The dataset contains 1,000 records, each described by 20 features and one respon
 
 ### Cost Matrix
 
+Additionally the data set requires a cost matrix, since it is worse to class a customer as good when they are bad (5), than it is to class a customer as bad when they are good (1).
+
 The cost matrix for the classification is as follows:
 
 | Predicted | 1   | 2   |
@@ -121,7 +131,6 @@ The cost matrix for the classification is as follows:
 | Actual 1  | 0   | 1   |
 | Actual 2  | 5   | 0   |
 
-In this matrix, misclassifying a ‘Bad’ applicant as ‘Good’ incurs a higher cost (5) compared to misclassifying a ‘Good’ applicant as ‘Bad’ (1). 
 
 For a detailed description of each attribute, please refer this [article](https://www1.beuth-hochschule.de/FB_II/reports/Report-2019-004.pdf).
 
@@ -130,7 +139,7 @@ For a detailed description of each attribute, please refer this [article](https:
 To ensure the dataset was suitable for analysis and modeling, several preprocessing and cleaning steps were undertaken:
 
 1. **Data Translation:**
-   - Translated categorical variables for increased readability. For example, values initially represented as `a1`, `a2`, etc., were converted to more descriptive terms such as `yes`, `no`, etc.
+   - Translated categorical variables for increased readability. 
 
 2. **Data Inspection:**
    - **Dataset Size:** Examined the size of the dataset to understand its structure.
