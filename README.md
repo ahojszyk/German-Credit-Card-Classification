@@ -6,6 +6,125 @@ For financial institutions, credit risk assessment is a crucial task that enable
 
 The aim of this project is twofold. Firstly, it involves describing and performing exploratory data analysis on the 'German Credit Data' dataset to maximize insight into the dataset and its structure. Secondly, using the knowledge gained from this analysis, different data mining techniques will be employed to classify bank customers as 'good' or 'bad.' These classification models will be compared to select the best one, with the goal of increasing the efficiency of predicting whether a given customer is suitable for credit.
 
+## Dataset Overview
+
+The dataset contains 1,000 records, each described by 20 features and one response variable. The features include personal, demographic, and financial factors of potential loan applicants. The response variable indicates the risk score: `1` for a good risk score and `2` for a bad risk score.
+
+### Feature Descriptions
+
+- **Attribute 1:** Status of existing checking account (ordinal)
+  - `A11`: < 0 DM
+  - `A12`: 0 ≤ ... < 200 DM
+  - `A13`: ≥ 200 DM / salary assignments for at least 1 year
+  - `A14`: No checking account
+
+- **Attribute 2:** Duration in months (numerical/continuous)
+
+- **Attribute 3:** Credit history (nominal)
+  - `A30`: No credits taken/all credits paid back duly
+  - `A31`: All credits at this bank paid back duly
+  - `A32`: Existing credits paid back duly till now
+  - `A33`: Delay in paying off in the past
+  - `A34`: Critical account/other credits existing (not at this bank)
+
+- **Attribute 4:** Purpose (nominal)
+  - `A40`: Car (new)
+  - `A41`: Car (used)
+  - `A42`: Furniture/equipment
+  - `A43`: Radio/television
+  - `A44`: Domestic appliances
+  - `A45`: Repairs
+  - `A46`: Education
+  - `A47`: Vacation
+  - `A48`: Retraining
+  - `A49`: Business
+  - `A410`: Others
+
+- **Attribute 5:** Credit amount (numerical/continuous)
+
+- **Attribute 6:** Savings account/bonds (ordinal)
+  - `A61`: < 100 DM
+  - `A62`: 100 ≤ ... < 500 DM
+  - `A63`: 500 ≤ ... < 1000 DM
+  - `A64`: ≥ 1000 DM
+  - `A65`: Unknown/no savings account
+
+- **Attribute 7:** Present employment since (ordinal)
+  - `A71`: Unemployed
+  - `A72`: < 1 year
+  - `A73`: 1 ≤ ... < 4 years
+  - `A74`: 4 ≤ ... < 7 years
+  - `A75`: ≥ 7 years
+
+- **Attribute 8:** Installment rate in percentage of disposable income (ordinal)
+
+- **Attribute 9:** Personal status and sex (nominal)
+  - `A91`: Male: divorced/separated
+  - `A92`: Female: divorced/separated/married
+  - `A93`: Male: single
+  - `A94`: Male: married/widowed
+  - `A95`: Female: single
+
+- **Attribute 10:** Other debtors/guarantors (nominal)
+  - `A101`: None
+  - `A102`: Co-applicant
+  - `A103`: Guarantor
+
+- **Attribute 11:** Present residence since (ordinal)
+
+- **Attribute 12:** Property (nominal)
+  - `A121`: Real estate
+  - `A122`: Building society savings agreement/life insurance
+  - `A123`: Car or other (not in attribute 6)
+  - `A124`: Unknown/no property
+
+- **Attribute 13:** Age (numerical/continuous)
+
+- **Attribute 14:** Other installment plans (nominal)
+  - `A141`: Bank
+  - `A142`: Stores
+  - `A143`: None
+
+- **Attribute 15:** Housing (nominal)
+  - `A151`: Rent
+  - `A152`: Own
+  - `A153`: Free
+
+- **Attribute 16:** Number of existing credits at this bank (ordinal)
+
+- **Attribute 17:** Job (ordinal)
+  - `A171`: Unemployed/unskilled - non-resident
+  - `A172`: Unskilled - resident
+  - `A173`: Skilled employee/official
+  - `A174`: Management/self-employed/highly qualified employee/officer
+
+- **Attribute 18:** Number of people being liable to provide maintenance for (ordinal)
+
+- **Attribute 19:** Telephone (binary)
+  - `A191`: None
+  - `A192`: Yes, registered under the customer's name
+
+- **Attribute 20:** Foreign worker (binary)
+  - `A201`: Yes
+  - `A202`: No
+
+- **Classification:** 
+  - `1`: Good
+  - `2`: Bad
+
+### Cost Matrix
+
+The cost matrix for the classification is as follows:
+
+| Predicted | 1   | 2   |
+|-----------|-----|-----|
+| Actual 1  | 0   | 1   |
+| Actual 2  | 5   | 0   |
+
+In this matrix, misclassifying a ‘Bad’ applicant as ‘Good’ incurs a higher cost (5) compared to misclassifying a ‘Good’ applicant as ‘Bad’ (1). 
+
+For a detailed description of each attribute, please refer to the [documentation site](https://www1.beuth-hochschule.de/FB_II/reports/Report-2019-004.pdf).
+
 ## Data Cleaning 
 
 To ensure the dataset was suitable for analysis and modeling, several preprocessing and cleaning steps were undertaken:
