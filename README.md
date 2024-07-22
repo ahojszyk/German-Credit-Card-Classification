@@ -123,7 +123,7 @@ The cost matrix for the classification is as follows:
 
 In this matrix, misclassifying a ‘Bad’ applicant as ‘Good’ incurs a higher cost (5) compared to misclassifying a ‘Good’ applicant as ‘Bad’ (1). 
 
-For a detailed description of each attribute, please refer to the [documentation site](https://www1.beuth-hochschule.de/FB_II/reports/Report-2019-004.pdf).
+For a detailed description of each attribute, please refer this [article](https://www1.beuth-hochschule.de/FB_II/reports/Report-2019-004.pdf).
 
 ## Data Cleaning 
 
