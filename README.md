@@ -4,7 +4,7 @@
 
 For financial institutions, credit risk assessment is a crucial task that enables them to distinguish between "good" and "bad" customers—in other words, to determine whether an applicant is eligible for credit. The development of machine learning techniques in recent years has significantly improved this selection process.
 
-The aim of this project is twofold. Firstly, it involves describing and performing exploratory data analysis on the 'German Credit Data' dataset to maximize insight into the dataset and its structure. Secondly, using the knowledge gained from this analysis, different data mining techniques will be employed to classify bank customers as 'good' or 'bad.' These classification models will be compared to select the best one, with the goal of increasing the efficiency of predicting whether a given customer is suitable for credit.
+The aim of this project is twofold. Firstly, it involves describing and performing exploratory data analysis on the 'German Credit Data' dataset to maximize insight into the dataset and its structure. Secondly, using the knowledge gained from this analysis, different data mining techniques will be employed to classify bank customers as 'good' or 'bad.' These classification models will be compared to select the best one, with the goal of increasing the efficiency of predicting whether a given customer is suitable for credit. Additionaly 
 
 ## Setup
 
@@ -226,4 +226,70 @@ In this section, we detail the preprocessing steps and methods used to handle cl
 
 2. **Handling Class Imbalance:**
    - **ADASYN Sampling:** The ADASYN (Adaptive Synthetic Sampling) technique was used to address class imbalance. It generates synthetic samples for the minority class, balancing the dataset without duplicating existing samples. This technique was applied only to the training set to maintain the test set's original class distribution for accurate performance evaluation.
+
+
+## Methodology
+
+To evaluate the performance of different classification approaches on the German Credit dataset, we performed a comprehensive comparison involving multiple steps:
+
+### 1. Feature Selection and Subsets
+
+We applied different feature selection techniques tailored to each classification method to create distinct subsets of features. This involved the following strategies:
+
+- **Logistic Regression:**
+  - **Feature Selection Approach:** Selected features based on the model’s coefficients, which indicate the change in the log odds for a one-unit change in the predictor variable. Larger absolute values suggest a stronger relationship with the target variable.
+  - **Standardization:** Features were standardized to ensure that coefficient magnitudes accurately reflect feature importance, preventing features with larger values from appearing more important due to scale differences.
+
+- **K-Nearest Neighbors (KNN):**
+  - **Feature Selection Approach:** Utilized LassoCV (Lasso regularization) to determine feature importance. Lasso penalizes irrelevant features by setting their coefficients to zero, effectively removing them from consideration.
+
+- **Decision Trees:**
+  - **Feature Selection Approach:** Calculated feature importance based on weighted Gini indices. Feature importance scores were averaged over 10 iterations to reduce the effect of randomness.
+
+### 2. Addressing Class Imbalance
+
+To handle the class imbalance in the dataset, we incorporated the ADASYN (Adaptive Synthetic Sampling) technique. This method generates synthetic samples to balance the class distribution. Each classification method was tested both with and without ADASYN to assess its impact on model performance.
+
+### 3. Combinations Evaluated
+
+We conducted a thorough comparison involving the following combinations:
+
+- **Logistic Regression:**
+  1. Logistic Regression with features selected based on coefficients
+  2. Logistic Regression with all features
+  3. Logistic Regression with features selected based on coefficients and ADASYN
+  4. Logistic Regression with all features and ADASYN
+
+- **K-Nearest Neighbors (KNN):**
+  5. KNN with features selected using LassoCV
+  6. KNN with all features
+  7. KNN with features selected using LassoCV and ADASYN
+  8. KNN with all features and ADASYN
+
+- **Decision Trees:**
+  9. Decision Trees with features selected based on Gini indices
+  10. Decision Trees with all features
+  11. Decision Trees with features selected based on Gini indices and ADASYN
+  12. Decision Trees with all features and ADASYN
+
+
+### 4. Performance Metrics
+
+Given the specific cost matrix associated with the German Credit dataset, we focused on metrics that account for both precision and recall. This included:
+
+- **Fβ Score:** A generalization of the F1 measure, with β set to 2 to give more weight to recall.
+  - Formula: \( Fβ = \frac{(1 + β^2) \times \text{Precision} \times \text{Recall}}{β^2 (\text{Precision} + \text{Recall})} \)
+
+To evaluate model performance, we prepared a data frame containing the following metrics:
+- **F2 Score**
+- **F1 Score**
+- **Accuracy**
+- **Cost:** Based on the given cost matrix
+- **Sensitivity**
+- **Specificity**
+
+To better understand the results, we included several visualizations:
+- **Confusion Matrices:** Plotted for each classification method and feature subset combination.
+- **ROC Curves:** Compared ROC curves for chosen features, all features, and with or without ADASYN.
+
 
