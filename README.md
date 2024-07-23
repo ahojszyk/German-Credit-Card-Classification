@@ -255,18 +255,21 @@ To handle the class imbalance in the dataset, we incorporated the ADASYN (Adapti
 We conducted a thorough comparison involving the following combinations:
 
 - **Logistic Regression:**
+
   1. Logistic Regression with features selected based on coefficients
   2. Logistic Regression with all features
   3. Logistic Regression with features selected based on coefficients and ADASYN
   4. Logistic Regression with all features and ADASYN
 
 - **K-Nearest Neighbors (KNN):**
+
   5. KNN with features selected using LassoCV
   6. KNN with all features
   7. KNN with features selected using LassoCV and ADASYN
   8. KNN with all features and ADASYN
 
 - **Decision Trees:**
+
   9. Decision Trees with features selected based on Gini indices
   10. Decision Trees with all features
   11. Decision Trees with features selected based on Gini indices and ADASYN
