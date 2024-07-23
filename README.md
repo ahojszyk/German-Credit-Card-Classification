@@ -295,4 +295,14 @@ To better understand the results, we included several visualizations:
 - **Confusion Matrices:** Plotted for each classification method and feature subset combination.
 - **ROC Curves:** Compared ROC curves for chosen features, all features, and with or without ADASYN.
 
+## Results Summary 
 
+We created several visualizations to compare the performance metrics across all combinations:
+- **F1 Score Comparison:** A bar plot comparing the F1 scores for each combination.
+  ![F1 Score Comparison](images/F_1_score_comparison.png)
+- **Sensitivity and Specificity Comparison:** A double bar plot comparing the sensitivity and specificity for each combination.
+  ![Sensitivity and Specificity Comparison](images/specificity_sensitivity_comparison.png)
+- **Accuracy Comparison:** A bar plot comparing the accuracy for each combination.
+  ![Accuracy Comparison](images/accuracy_comparison.png)
+- **Cost Comparison:** A bar plot comparing the cost for each combination, based on the given cost matrix.
+  ![Cost Comparison](images/cost_comparison.png)
