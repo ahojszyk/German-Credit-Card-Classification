@@ -219,7 +219,7 @@ The resulting dataset contains 38 numeric features and a class label.
 
 ## Preprocessing and Class Imbalance Handling
 
-In this section, we detail the preprocessing steps and methods used to handle class imbalance:
+In this section, I detail the preprocessing steps and methods used to handle class imbalance:
 
 1. **Data Preparation:**
    - **Splitting and Standardization:** The dataset was divided into training (70%) and test (30%) sets to prevent information leakage. Standardization was performed on the training set to ensure features have a mean of zero and a variance of one, improving model performance. This process was done only on the training data to keep the test set unbiased.
@@ -230,11 +230,11 @@ In this section, we detail the preprocessing steps and methods used to handle cl
 
 ## Methodology
 
-To evaluate the performance of different classification approaches on the German Credit dataset, we performed a comprehensive comparison involving multiple steps:
+To evaluate the performance of different classification approaches on the German Credit dataset, I performed a comprehensive comparison involving multiple steps:
 
 ### 1. Feature Selection and Subsets
 
-We applied different feature selection techniques tailored to each classification method to create distinct subsets of features. This involved the following strategies:
+I applied different feature selection techniques tailored to each classification method to create distinct subsets of features. This involved the following strategies:
 
 - **Logistic Regression:**
   - **Feature Selection Approach:** Selected features based on the model’s coefficients, which indicate the change in the log odds for a one-unit change in the predictor variable. Larger absolute values suggest a stronger relationship with the target variable.
@@ -248,11 +248,11 @@ We applied different feature selection techniques tailored to each classificatio
 
 ### 2. Addressing Class Imbalance
 
-To handle the class imbalance in the dataset, we incorporated the ADASYN (Adaptive Synthetic Sampling) technique. This method generates synthetic samples to balance the class distribution. Each classification method was tested both with and without ADASYN to assess its impact on model performance.
+To handle the class imbalance in the dataset, I incorporated the ADASYN (Adaptive Synthetic Sampling) technique. This method generates synthetic samples to balance the class distribution. Each classification method was tested both with and without ADASYN to assess its impact on model performance.
 
 ### 3. Combinations Evaluated
 
-We conducted a thorough comparison involving the following combinations:
+I conducted a thorough comparison involving the following combinations:
 
 - **Logistic Regression:**
 
@@ -278,12 +278,12 @@ We conducted a thorough comparison involving the following combinations:
 
 ### 4. Performance Metrics
 
-Given the specific cost matrix associated with the German Credit dataset, we focused on metrics that account for both precision and recall. This included:
+Given the specific cost matrix associated with the German Credit dataset, I focused on metrics that account for both precision and recall. This included:
 
 - **Fβ Score:** A generalization of the F1 measure, with β set to 2 to give more weight to recall.
-  - Formula: \( Fβ = \frac{(1 + β^2) \times \text{Precision} \times \text{Recall}}{β^2 (\text{Precision} + \text{Recall})} \)
+  - Formula: $$\( Fβ = \frac{(1 + β^2) \times \text{Precision} \times \text{Recall}}{β^2 (\text{Precision} + \text{Recall})} \)$$
 
-To evaluate model performance, we prepared a data frame containing the following metrics:
+To evaluate model performance, I prepared a data frame containing the following metrics:
 - **F2 Score**
 - **F1 Score**
 - **Accuracy**
@@ -291,13 +291,13 @@ To evaluate model performance, we prepared a data frame containing the following
 - **Sensitivity**
 - **Specificity**
 
-To better understand the results, we included several visualizations:
+To better understand the results, I included several visualizations:
 - **Confusion Matrices:** Plotted for each classification method and feature subset combination.
 - **ROC Curves:** Compared ROC curves for chosen features, all features, and with or without ADASYN.
 
 ## Results Summary 
 
-We created several visualizations to compare the performance metrics across all combinations:
+I created several visualizations to compare the performance metrics across all combinations:
 - **F1 Score Comparison:** A bar plot comparing the F1 scores for each combination.
   ![F1 Score Comparison](images/F_1_score_comparison.png)
 - **Sensitivity and Specificity Comparison:** A double bar plot comparing the sensitivity and specificity for each combination.
@@ -305,4 +305,4 @@ We created several visualizations to compare the performance metrics across all 
 - **Accuracy Comparison:** A bar plot comparing the accuracy for each combination.
   ![Accuracy Comparison](images/accuracy_comparison.png)
 - **Cost Comparison:** A bar plot comparing the cost for each combination, based on the given cost matrix.
-  ![Cost Comparison](images/cost_comparison.png)
+  ![Cost Comparison](images/cost_comaprison.png)
