@@ -306,3 +306,20 @@ I created several visualizations to compare the performance metrics across all c
   ![Accuracy Comparison](images/accuracy_comparison.png)
 - **Cost Comparison:** A bar plot comparing the cost for each combination, based on the given cost matrix.
   ![Cost Comparison](images/cost_comaprison.png)
+
+1. **Cost Efficiency as a Priority**  
+   Models incorporating ADASYN and effective feature selection strategies consistently minimized the cost associated with misclassifications. This demonstrates the practical importance of optimizing for a cost function in financial contexts where false negatives are significantly more expensive than false positives.
+   
+2. **Effectiveness of ADASYN Sampling**  
+   ADASYN sampling consistently improved the sensitivity across all models, enabling better identification of the minority class (defaults). While this led to a trade-off with reduced specificity and accuracy, the cost of misclassification (false negatives) was significantly reduced, making ADASYN critical for addressing class imbalance in datasets.
+
+3. **Importance of Feature Selection**  
+   Models with selected features (Top 5 or Lasso) generally demonstrated improved performance metrics, such as F1 and F2 scores, compared to models using all features. This highlights the importance of focusing on the most predictive variables to enhance classification accuracy and reduce computational complexity.
+
+4. **Critical Role of Metrics**  
+   The use of F1 score provided a balanced evaluation of precision and recall, especially in imbalanced datasets where accuracy alone could be misleading. These metrics were essential for understanding the trade-offs between sensitivity and specificity and identifying the most effective models.
+
+5. **Best Model Choices for Specific Goals**  
+   - For **high sensitivity**: Logistic regression paired with ADASYN was the most effective in identifying defaults.  
+   - For **balanced performance**: Decision tree models with Top 5 features and ADASYN achieved a strong balance of sensitivity, specificity, and cost, making them suitable for scenarios requiring reliable detection of defaults while managing false positives.  
+
